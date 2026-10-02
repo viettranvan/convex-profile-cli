@@ -1,0 +1,52 @@
+{
+  "name": "convex-profile-cli",
+  "version": "0.1.0",
+  "description": "Named profiles for self-hosted and Convex Cloud deployments; wraps the official Convex CLI.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "convex",
+    "cli",
+    "profile",
+    "deployment",
+    "deploy-key",
+    "cloud",
+    "self-hosted",
+    "ai-agent"
+  ],
+  "bin": {
+    "convex-profile": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepare": "npm run build",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "@modelcontextprotocol/client": "^2.2.0",
+    "@modelcontextprotocol/server": "^2.2.0",
+    "adm-zip": "^0.6.1",
+    "commander": "^13.1.0",
+    "convex": "^1.46.0",
+    "serve-handler": "^6.1.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^22.13.10",
+    "@types/serve-handler": "^6.1.4",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
